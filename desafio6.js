@@ -40,8 +40,8 @@ let teams = ["Flamengo", "Corinthias", "Gremio", "Palmeiras", "Bangu"];
 let counter = 0;
 console.log("Times que estão parñticipando do campeonato:");
 while (counter < teams.length) {
-    console.log(teams[counter]);
-    counter++;
+  console.log(teams[counter]);
+  counter++;
 }
 
 /*
@@ -61,21 +61,26 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 //
-function showTimePosition(position) {
-    if (position < 1 || position > teams.length + 1)
-        return "Não temos a informação do time que está nessa posiçào";
-    else
-        return (
-            "O time que está em " + position + " lugar é o " + teams[position - 1]
-        );
+function showTeamPosition(position) {
+  if (position < 1 || position > teams.length)
+    return "Não temos a informação do time que está nessa posiçào";
+  else
+    return (
+      "O time que está em " + position + "ª lugar é o " + teams[position - 1]
+    );
 }
-console.log(showTimePosition(1));
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 // ?
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(4));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(6));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -83,9 +88,8 @@ repetição "while".
 */
 // ?
 let counter2 = 20;
-while (counter2 < 31) {
-    console.log(counter2);
-    counter2++;
+while (counter2 <= 30) {
+  console.log(counter2++);
 }
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -101,29 +105,31 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 // ?
 function convertToHex(color) {
-    switch (color) {
-        case "white":
-            hexa = "#FFFFFFF";
-            break;
-        case "blue":
-            hexa = "#FFFFFF";
-            break;
-        case "red":
-            hexa = "#FF000";
+  switch (color) {
+    case "white":
+      hexa = "#FFF";
+      break;
+    case "blue":
+      hexa = "#0000ff";
+      break;
 
-            break;
-        case "gray":
-            hexa = "#00FF00";
-            break;
-        default:
-            return "Não temos um equivalente para essa " + color;
-    }
-    return "O hexadecimal para a cor" + color + " é " + hexa;
+    case "red":
+      hexa = "#ff0000";
+      break;
+
+    case "gray":
+      hexa = "#808080";
+      break;
+    default:
+      return "Não temos um equivalente para " + color;
+  }
+  return "O hexadecimal para a cor" + color + " é " + hexa; // Isso evita repetição dentro da estrutura switch
 }
-
-convertToHex("white");
 
 /*
  Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
  */
 // ?
+console.log(convertToHex("white"));
+console.log(convertToHex("blue"));
+console.log(convertToHex("yellow"));
